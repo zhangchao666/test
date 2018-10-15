@@ -1,0 +1,38 @@
+module test {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:test";
+    prefix "test";
+
+    revision "2018-07-06" {
+        description "Initial revision of demo model";
+    }
+    rpc demo {
+        input {
+            leaf name {
+                type string;
+            }
+        }
+        output {
+            leaf greeting {
+                type string;
+            }
+        }
+    }
+    notification say {
+        leaf message {
+            type string;
+        }
+    }
+    container main {
+        list user {
+            key "name";
+            leaf name {
+                type string;
+            }
+
+            leaf age {
+                type string;
+            }
+        }
+    }
+}
